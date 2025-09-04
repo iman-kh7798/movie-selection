@@ -8,13 +8,11 @@ import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
-
 interface Props {
   q: Question;
   value?: string;
   onChange: (val: string) => void;
 }
-
 
 export function QuestionStep({ q, value, onChange }: Props) {
   return (
@@ -29,12 +27,12 @@ export function QuestionStep({ q, value, onChange }: Props) {
             {q.options.map((opt) => (
               <label
                 key={opt.id}
-                dir='rtl'
                 className={cn(
-                  "group relative flex row-reverse cursor-pointer items-center gap-3 rounded-2xl border p-4 transition",
+                  "group relative flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition",
                   "border-white/10 bg-black/30 hover:bg-black/40",
                   value === opt.id ? "ring-2 ring-primary/40 border-primary/40" : ""
                 )}
+                dir='rtl'
               >
                 <div className="absolute inset-0 -z-[1] rounded-2xl bg-gradient-to-r from-primary/10 to-fuchsia-500/10 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <RadioGroupItem id={`${q.id}-${opt.id}`} value={opt.id} />

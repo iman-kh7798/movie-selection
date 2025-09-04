@@ -8,8 +8,11 @@ import { getPosterUrl } from "@/lib/tmdb";
 import { motion } from "framer-motion";
 import { Film } from "lucide-react";
 
-interface Props { movies: TMDbMovie[]; traits: string[]; onRestart: () => void; }
-
+interface Props {
+  movies: TMDbMovie[];
+  traits: string[];
+  onRestart: () => void;
+}
 
 export function ResultView({ movies, traits, onRestart }: Props) {
   return (
@@ -20,7 +23,6 @@ export function ResultView({ movies, traits, onRestart }: Props) {
           <Badge key={t} variant="outline" className="border-white/20 text-white">{t}</Badge>
         ))}
       </div>
-
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {movies.map((m, i) => (
@@ -55,14 +57,6 @@ export function ResultView({ movies, traits, onRestart }: Props) {
           </motion.div>
         ))}
       </div>
-
-
-      <button
-        className="mt-2 inline-flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-2 text-white backdrop-blur transition hover:bg-white/15"
-        onClick={onRestart}
-      >
-        شروع دوباره
-      </button>
     </div>
   );
 }
