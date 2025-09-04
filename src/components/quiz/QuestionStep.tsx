@@ -17,7 +17,7 @@ interface Props {
 export function QuestionStep({ q, value, onChange }: Props) {
   return (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
-      <Card className="border-white/10 bg-background/70 backdrop-blur-xl shadow-2xl">
+      <Card className="border-white/10 bg-gray-100/70 backdrop-blur-xl shadow-2xl">
         <CardContent className="space-y-5 p-6">
           <div className="flex items-center gap-2 text-lg font-semibold">
             <Sparkles className="h-5 w-5 text-primary" />
